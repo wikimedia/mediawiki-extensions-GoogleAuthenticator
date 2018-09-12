@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Youri van den Bogert"
+		]
+	},
+	"google2fa-info": "Tweetrapsauthenticatie is nodig om deze wiki te gebruiken.",
+	"google2fa-token-label": "Token",
+	"google2fa-secret-img": "Scan de onderstaande code in: <span class=\"g2faqr\">$1</span> of gebruik de sleutel: <strong>$2</strong> om je geheime sleutel op te slaan in je app.",
+	"google2fa-rescue-codes": "Mocht je je verificatie willen resetten kun je altijd de volgende codes invoeren om de tweetrapsauthenticatiemethode uit te zetten: $1, $2, $3",
+	"google2fa-login-failure": "Er is geen geldige code opgegeven. Probeer het nog eens",
+	"google2fa-login-retry-limit": "Je bent automatisch uitgelogd omdat er teveel foute pogingen gedaan zijn.",
+	"google2fa-resetted": "Je hebt een 'rescue' code opgegeven. Log opnieuw in."
+}

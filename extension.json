@@ -1,7 +1,7 @@
 {
 	"name": "GoogleAuthenticator",
 	"author": "Youri van den Bogert",
-	"version": "0.5.0",
+	"version": "0.6.0",
 	"url": "https://www.xl-knowledge.nl",
 	"descriptionmsg": "ga-desc",
 	"license-name": "GPL-2.0+",
@@ -13,7 +13,7 @@
 		"PHPGangsta_GoogleAuthenticator": "includes/external/GoogleAuthenticator.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/AuthenticationRequest.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/SecondaryAuthenticationProvider.php",
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks": "includes/Hooks.php"
+		"MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks": "Hooks.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks::Initialize"

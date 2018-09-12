@@ -1,4 +1,4 @@
-MediaWiki Google2Factor authenticationextension
+MediaWiki Google2Factor authentication extension
 ===
 Version 0.6.0
  - Last update: 12 september 2018

@@ -8,28 +8,21 @@
  * A copy of the license is included in the section entitled "GNU
  * Free Documentation License".
  *
- * @date: 9/7/18 / 3:08 PM
+ * @date: 9/12/18 / 5:59 PM
  * @author: Youri van den Bogert
  * @url: http://www.xl-knowledge.nl/
  */
+
 namespace MediaWiki\Extensions\GoogleAuthenticator;
 
-class Hooks {
+class Google2FARecover extends \SpecialPage {
 
-	/**
-	 * Adds all the needed resources
-	 *
-	 * @param $parser
-	 * @return bool
-	 */
-	public static function Initialize(&$parser) {
 
-		global $wgOut;
-
-		$wgOut->addModules("ext.Google2FA");
-
-		return true;
-
+	public function __construct() {
+		parent::__construct( 'Google2FARecover' );
 	}
 
+	public function execute( $par ){
+
+	}
 }

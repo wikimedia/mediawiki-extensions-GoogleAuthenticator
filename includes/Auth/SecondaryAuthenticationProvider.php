@@ -19,7 +19,6 @@ use MediaWiki\Auth\AbstractSecondaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Logger\LoggerFactory;
-use MWCryptRand;
 
 class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuthenticationProvider {
 
@@ -50,6 +49,15 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 		return [];
 	}
 
+	/**
+	 * Begins the secondary authentication process. Generates new secrets
+	 * for new requests
+	 *
+	 * @param \User $user
+	 * @param array $reqs
+	 * @return AuthenticationResponse
+	 * @throws \Exception
+	 */
 	public function beginSecondaryAuthentication( $user, array $reqs ) {
 
 		$secret = $user->getOption( self::OPT_SECRET, false );
@@ -84,10 +92,19 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 	}
 
+	/**
+	 * Validates the user's input
+	 *
+	 * @param $user
+	 * @param array $reqs
+	 * @return AuthenticationResponse
+	 * @throws \Exception
+	 */
 	public function continueSecondaryAuthentication( $user, array $reqs ) {
 
 		// Fetch the secret
 		$secret = $user->getOption(self::OPT_SECRET, false);
+		$secretSetup = $user->getOption(self::OPT_SECRET_SETUP,false);
 
 		// Fetch rescue options
 		$rescueCodes = [
@@ -99,9 +116,8 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 		/** @var Google2FactorAuthenticationRequest $req */
 		$req = AuthenticationRequest::getRequestByClass( $reqs, Google2FactorAuthenticationRequest::class );
 
-
 		// If the user has given a rescue code, reset the OPT_SECRET_SETUP and show the form again
-		if( $req && in_array( $req->token, $rescueCodes ) ) {
+		if ($req && in_array($req->token, $rescueCodes)) {
 
 			// Reset all the codes of the user
 			$this->resetSecretCodes( $user );
@@ -113,16 +129,21 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 			return $this->beginSecondaryAuthentication( $user, $reqs );
 
 		// Wrong token given upon new code
-		} else if ( $req && !$this->getGoogleAuthClass()->verifyCode($secret, $req->token) && !$user->getOption(self::OPT_SECRET_SETUP,false)  ) {
+		} else if ($req && !GoogleAuthenticator::verifyCode($secret, $req->token) && !$secretSetup) {
 
 			// Reset all the codes of the user
 			$this->resetSecretCodes( $user );
+
+			LoggerFactory::getInstance( 'Google2FA' )->info(
+				'{user} gave a wrong code in the setup process.',
+				[ 'user' => $user->getName() ]
+			);
 
 			// Return the 2 FA authentication process again
 			return $this->beginSecondaryAuthentication( $user, $reqs );
 
 		// We have a valid session when the code has been verified succesfully
-		} else if ( $req && $this->getGoogleAuthClass()->verifyCode( $secret, $req->token ) ) {
+		} else if ( $req && GoogleAuthenticator::verifyCode( $secret, $req->token ) ) {
 
 			// The secret has been saved in to the DB and the given code was
 			// validated. Save it to the DB
@@ -142,7 +163,7 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 			return AuthenticationResponse::newPass();
 
 		// Invalid code given
-		} else if ( $req && !$this->getGoogleAuthClass()->verifyCode($secret, $req->token)) {
+		} else if ( $req && !GoogleAuthenticator::verifyCode($secret, $req->token)) {
 			LoggerFactory::getInstance('Google2FA')->info( 'Invalid token for {user}', [ 'user' => $user->getName() ] );
 		}
 
@@ -164,6 +185,12 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 	}
 
+	/**
+	 * @param \User $user
+	 * @param \User $creator
+	 * @param array $reqs
+	 * @return AuthenticationResponse
+	 */
 	public function beginSecondaryAccountCreation( $user, $creator, array $reqs ) {
 		return AuthenticationResponse::newAbstain();
 	}
@@ -177,24 +204,19 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 */
 	private function generateSecrets( $user ) {
 
-		$secrets = [
-			$this->getGoogleAuthClass()->createSecret(),
-			MWCryptRand::generateHex( 16 ),
-			MWCryptRand::generateHex( 16 ),
-			MWCryptRand::generateHex( 16 )
-		];
+		$mainSecret = GoogleAuthenticator::generateSecret();
 
 		// Save secrets
-		$user->setOption( self::OPT_SECRET, $secrets[0] );
-		$user->setOption( self::OPT_RESCUE_1, $secrets[1] );
-		$user->setOption( self::OPT_RESCUE_2, $secrets[2] );
-		$user->setOption( self::OPT_RESCUE_3, $secrets[3] );
+		$user->setOption( self::OPT_SECRET, $mainSecret );
+		$user->setOption( self::OPT_RESCUE_1, GoogleAuthenticator::generateSecret() );
+		$user->setOption( self::OPT_RESCUE_2, GoogleAuthenticator::generateSecret() );
+		$user->setOption( self::OPT_RESCUE_3, GoogleAuthenticator::generateSecret() );
 
 		// Save user settings
 		$user->saveSettings();
 
 		// Return the first secret
-		return $secrets[0];
+		return $mainSecret;
 
 	}
 
@@ -215,10 +237,4 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 		return true;
 	}
 
-	/**
-	 * @return \PHPGangsta_GoogleAuthenticator
-	 */
-	private function getGoogleAuthClass() {
-		return new \PHPGangsta_GoogleAuthenticator();
-	}
 }

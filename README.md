@@ -1,6 +1,6 @@
 MediaWiki Google2Factor authentication extension
 ===
-Version 0.7.0
+Version 1.0.0
  - Last update: 13 september 2018
 
 This is the README file for the Google2Factor extension for MediaWiki
@@ -23,10 +23,7 @@ Custom variables
 
 Todo/Ideas
 ===
-Todo: 
-* (todo) Recover 2FA by e-mail verification
+Todo: <nothing atm>
 
-Ideas?
-
-Please, don't hesitate to contact me! 
+Ideas? Please, don't hesitate to contact me! 
   

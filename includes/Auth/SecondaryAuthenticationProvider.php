@@ -234,6 +234,9 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 		$user->setOption( self::OPT_RESCUE_2, false );
 		$user->setOption( self::OPT_RESCUE_3, false );
 
+		// Reset mail sent option
+		$user->setOption( Google2FARecover::OPT_WAS_MAIL_SENT, false );
+
 		// Save settings
 		$user->saveSettings();
 

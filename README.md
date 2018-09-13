@@ -1,6 +1,6 @@
 MediaWiki Google2Factor authentication extension
 ===
-Version 0.6.0
+Version 0.8.0
  - Last update: 12 september 2018
 
 This is the README file for the Google2Factor extension for MediaWiki
@@ -25,8 +25,6 @@ Todo/Ideas
 ===
 Todo: 
 * (todo) Recover 2FA by e-mail verification
-* (todo) Replace PHPGangsta_GoogleAuthenticator external class and use internal MW library
-* (todo) Replace display of QR code
 
 Ideas?
 

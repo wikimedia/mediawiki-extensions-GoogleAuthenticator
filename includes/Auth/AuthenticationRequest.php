@@ -31,9 +31,6 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 	/** @var array */
 	private $rescueCodes = [];
 
-	/** @var \PHPGangsta_GoogleAuthenticator */
-	private $googleAuthenticator;
-
 	/**
 	 * Google2FactorAuthenticationRequest constructor.
 	 *
@@ -45,7 +42,6 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 		$this->newlyGenerated = $newlyGenerated;
 		$this->secret = $secret;
 		$this->rescueCodes = $rescueCodes;
-		$this->googleAuthenticator = new \PHPGangsta_GoogleAuthenticator();
 	}
 
 	/**
@@ -58,6 +54,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 
 		if( $this->newlyGenerated ) {
 
+			// Secret code field
 			$fields['secret'] = [
 				'type' => 'null',
 				'label' => wfMessage(
@@ -69,6 +66,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 				'skippable' => true
 			];
 
+			// Rescue codes field
 			$fields['rescue'] = [
 				'type' => 'null',
 				'label' => wfMessage('google2fa-rescue-codes', $this->rescueCodes[0],
@@ -79,6 +77,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 
 		}
 
+		// Token input field
 		$fields['token'] = [
 				'type' => 'string',
 				'label' => wfMessage( 'google2fa-token-label' ),
@@ -87,33 +86,32 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 				'optional' => false
 		];
 
+		/*if( !$this->newlyGenerated ) {
+
+			// Token lost field
+			$fields['tokenlost'] = [
+				'type' => 'null',
+				'label' => wfMessage('google2fa-token-lost', $this->username),
+				'help' => '',
+				'skippable' => true
+			];
+
+		}*/
+
 		return $fields;
+
 	}
 
 	/**
-	 * Retrieves the base64 of the generated QR code
+	 * Returns the base64 of the QR code
 	 *
 	 * @param $secret
 	 * @return string
+	 * @throws \Exception
 	 */
 	private function getQRBase64( $secret ) {
-
-		global $wgGAIssuer, $wgSitename, $wgUser;
-
-		// Replace sitename to $wgSitename
-		$issuer = str_replace('__SITENAME__', $wgSitename, $wgGAIssuer);
-
-		// Return Google's QR URL
-		return base64_encode(
-			file_get_contents(
-				$this->googleAuthenticator->getQRCodeGoogleUrl(
-					str_replace(' ', '-', $wgUser->getName() ),
-					$secret,
-					$issuer
-				)
-			)
-		);
-
+		$qrCode = GoogleAuthenticator::getQRCode( $secret, $this->username );
+		return base64_encode( $qrCode );
 	}
 
 }

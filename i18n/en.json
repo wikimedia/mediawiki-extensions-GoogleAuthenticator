@@ -7,7 +7,7 @@
 	"google2fa-info": "You are required to use 2 factor authentication on this wiki.",
 	"google2fa-token-label": "Token",
 	"google2fa-secret-img": "Scan the QR below <span class=\"g2faqr\">$1</span> or use the generated key: <strong>$2</strong> to save this application in your GoogleAuthenticator app",
-	"google2fa-rescue-codes": "Save the three codes (write them down!) below to use them as rescue keys: $1, $2, $3",
+	"google2fa-rescue-codes": "Save the three codes (write them down!) below to use them as rescue keys:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
 	"google2fa-login-failure": "Invalid code given. Retry again.",
 	"google2fa-login-retry-limit": "All given codes were invalid. Try again later.",
 	"google2fa-resetted": "You've entered a rescue code. Sign in again to create new authentication and rescue codes."

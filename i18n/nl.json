@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Youri van den Bogert"
+		]
+	},
+	"google2fa-info": "Tweetrapsauthenticatie is nodig om deze wiki te gebruiken.",
+	"google2fa-token-label": "Token",
+	"google2fa-secret-img": "Scan de onderstaande code in: <span class=\"g2faqr\">$1</span> of gebruik de sleutel: <strong>$2</strong> om je geheime sleutel op te slaan in je app.",
+	"google2fa-rescue-codes": "Mocht je je verificatie willen resetten kun je altijd de volgende codes invoeren om de tweetrapsauthenticatiemethode uit te zetten:<br><ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Er is geen geldige code opgegeven. Probeer het nog eens",
+	"google2fa-login-retry-limit": "Je bent automatisch uitgelogd omdat er teveel foute pogingen gedaan zijn.",
+	"google2fa-resetted": "Je hebt een 'rescue' code opgegeven. Log opnieuw in.",
+	"google2fa-token-lost": "Sleutel en rescue codes kwijt? Klik [{{fullurl:Special:Google2FARecover|user=$1}} hier] om je tokens te herstellen.",
+	"google2fa-invalid-user": "Er is geen geldige gebruikersnaam opgegeven",
+	"google2fa-mail-already-sent": "Er is al een mail verzonden. Kijk eens in je spam folder!",
+	"google2fa-email-not-confirmed": "Je e-mailadres is niet geverifieerd. Neem contact op met de wiki eigenaar.",
+	"google2fa-mail-title": "Rescue codes",
+	"google2fa-mail-body": "Volgens ons systeem kun je niet meer inloggen op de wiki. Gebruik een van de onderstaande codes om in te loggen op je account\n\r * $1\n\r *$2\n\r *$3",
+	"google2fa-mail-sent": "Rescue codes zijn verzonden, zie email."
+}

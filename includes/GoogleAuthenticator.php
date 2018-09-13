@@ -20,9 +20,15 @@ class GoogleAuthenticator {
 
 	/**
 	 * Default secret length
-	 * @param int
+	 * @var int
 	 */
 	const SECRET_LENGTH = 24;
+
+	/**
+	 * Code length (6 in Google's Authenticator App
+	 * @var int
+	 */
+	const CODE_LENGTH = 6;
 
 	/**
 	 * Verifies the given code
@@ -157,9 +163,9 @@ class GoogleAuthenticator {
 		// Only 32 bits
 		$value = $value & 0x7FFFFFFF;
 
-		$modulo = pow(10, self::SECRET_LENGTH);
+		$modulo = pow(10, self::CODE_LENGTH);
 
-		return str_pad($value % $modulo, self::SECRET_LENGTH, '0', STR_PAD_LEFT);
+		return str_pad($value % $modulo, self::CODE_LENGTH, '0', STR_PAD_LEFT);
 	}
 
 	/**

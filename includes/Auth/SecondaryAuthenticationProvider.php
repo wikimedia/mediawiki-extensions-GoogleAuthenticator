@@ -59,34 +59,29 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * @throws \Exception
 	 */
 	public function beginSecondaryAuthentication( $user, array $reqs ) {
-
 		$secret = $user->getOption( self::OPT_SECRET, false );
-		$secretSetup = $user->getOption( self::OPT_SECRET_SETUP, false);
-		$generateNew = ( !$secretSetup );
-		$rescueCodes = [];
+		$completedSetup = $user->getOption( self::OPT_SECRET_SETUP, false);
 
-		if ($generateNew) {
-
+		// If the setup was never completed, and secret was false, generate new secrets
+		if (!$completedSetup && $secret === false) {
 			// Generate a new secret
 			$secret = $this->generateSecrets( $user );
-
-			// Set rescue codes
-			$rescueCodes = [
-				$user->getOption(self::OPT_RESCUE_1),
-				$user->getOption(self::OPT_RESCUE_2),
-				$user->getOption(self::OPT_RESCUE_3)
-			];
-
 			// Log action
 			LoggerFactory::getInstance('Google2FA')->info(
 				'Generated new token for {user}',
 				[ 'user' => $user->getName() ]
 			);
-
 		}
 
+		// Set rescue codes
+		$rescueCodes = [
+			$user->getOption(self::OPT_RESCUE_1),
+			$user->getOption(self::OPT_RESCUE_2),
+			$user->getOption(self::OPT_RESCUE_3)
+		];
+
 		return AuthenticationResponse::newUI(
-			[ new Google2FactorAuthenticationRequest( $secret, $generateNew, $rescueCodes ) ],
+			[ new Google2FactorAuthenticationRequest( $secret, (!$completedSetup), $rescueCodes ) ],
 			wfMessage('google2fa-info')
 		);
 
@@ -130,9 +125,6 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 		// Wrong token given upon new code
 		} else if ($req && !GoogleAuthenticator::verifyCode($secret, $req->token) && !$secretSetup) {
-
-			// Reset all the codes of the user
-			$this->resetSecretCodes( $user );
 
 			LoggerFactory::getInstance( 'Google2FA' )->info(
 				'{user} gave a wrong code in the setup process.',
@@ -224,14 +216,25 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * Resets all the codes for the given user
 	 *
 	 * @param $user
+	 * @param bool $resetMaster
 	 * @return bool
 	 */
-	private function resetSecretCodes( $user ) {
+	private function resetSecretCodes( $user, $resetMaster = true ) {
+
+
 		$user->setOption( self::OPT_SECRET_SETUP, false );
-		$user->setOption( self::OPT_SECRET, false );
+
+		// We might not always the master code
+		if( $resetMaster ) {
+			$user->setOption( self::OPT_SECRET, false );
+		}
+
+		// Reset rescue codes
 		$user->setOption( self::OPT_RESCUE_1, false );
 		$user->setOption( self::OPT_RESCUE_2, false );
 		$user->setOption( self::OPT_RESCUE_3, false );
+
+		// Save settings
 		$user->saveSettings();
 
 		return true;

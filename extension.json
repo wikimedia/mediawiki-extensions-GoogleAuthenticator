@@ -1,7 +1,7 @@
 {
 	"name": "GoogleAuthenticator",
 	"author": "Youri van den Bogert",
-	"version": "0.7.0",
+	"version": "1.0.0",
 	"url": "https://www.xl-knowledge.nl",
 	"descriptionmsg": "ga-desc",
 	"license-name": "GPL-2.0+",
@@ -12,11 +12,15 @@
 	"AutoloadClasses": {
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/Auth/AuthenticationRequest.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/Auth/SecondaryAuthenticationProvider.php",
+		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover": "includes/Special/Google2FARecover.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks": "includes/Hooks.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\GoogleAuthenticator": "includes/GoogleAuthenticator.php"
 	},
 	"Hooks": {
 		"BeforePageDisplay": "MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks::onBeforePageDisplay"
+	},
+	"SpecialPages": {
+		"Google2FARecover": "MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover"
 	},
 	"config": {
 		"GAIssuer": "__SITENAME__"

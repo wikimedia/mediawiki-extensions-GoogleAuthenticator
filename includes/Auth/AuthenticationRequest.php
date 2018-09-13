@@ -86,7 +86,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 				'optional' => false
 		];
 
-		/*if( !$this->newlyGenerated ) {
+		if( !$this->newlyGenerated ) {
 
 			// Token lost field
 			$fields['tokenlost'] = [
@@ -96,7 +96,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 				'skippable' => true
 			];
 
-		}*/
+		}
 
 		return $fields;
 

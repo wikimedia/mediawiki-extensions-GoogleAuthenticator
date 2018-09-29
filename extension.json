@@ -9,6 +9,9 @@
 	"MessagesDirs": {
 		"GoogleAuthenticator": "i18n"
 	},
+	"ExtensionMessagesFiles": {
+		"GoogleAuthenticatorAlias": "GoogleAuthenticator.i18n.alias.php"
+	},
 	"AutoloadClasses": {
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/Auth/AuthenticationRequest.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/Auth/SecondaryAuthenticationProvider.php",

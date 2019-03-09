@@ -78,7 +78,7 @@ class GoogleAuthenticator {
 		$validChars = self::getBase32LookupTable();
 
 		// Generates a strong secret
-		$secret = \MWCryptRand::generate( $secretLength );
+		$secret = random_bytes( $secretLength );
 		$secretEnc = '';
 		for( $i = 0; $i < strlen($secret); $i++ ) {
 			$secretEnc .= $validChars[ord($secret[$i]) & 31];

@@ -31,15 +31,15 @@ class Google2FARecover extends \SpecialPage {
 
 		// Invalid user
 		if( !$requestForUser && !$user ) {
-			$this->getOutput()->addWikiText( wfMessage( 'google2fa-invalid-user' ) );
+			$this->getOutput()->addWikiTextAsInterface( wfMessage( 'google2fa-invalid-user' ) );
 
 		// User didn't verify his or her emailaddress
 		} else if ( $user->isEmailConfirmationPending() || !$user->isEmailConfirmed() ) {
-			$this->getOutput()->addWikiText( wfMessage( 'google2fa-email-not-confirmed' ) );
+			$this->getOutput()->addWikiTextAsInterface( wfMessage( 'google2fa-email-not-confirmed' ) );
 
 		// Recover email was already sent
 		} else if ( $user->getOption(self::OPT_WAS_MAIL_SENT, false) !== false ) {
-			$this->getOutput()->addWikiText(wfMessage('google2fa-mail-already-sent'));
+			$this->getOutput()->addWikiTextAsInterface(wfMessage('google2fa-mail-already-sent'));
 
 		// Sent recover codes
 		}  else {
@@ -65,7 +65,7 @@ class Google2FARecover extends \SpecialPage {
 				$user->saveSettings();
 
 				// Output info
-				$this->getOutput()->addWikiText(wfMessage('google2fa-mail-sent'));
+				$this->getOutput()->addWikiTextAsInterface(wfMessage('google2fa-mail-sent'));
 
 				LoggerFactory::getInstance('Google2FA')->info(
 					'Sending recover email to {user}',

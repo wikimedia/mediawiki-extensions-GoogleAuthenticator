@@ -60,14 +60,14 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 */
 	public function beginSecondaryAuthentication( $user, array $reqs ) {
 		$secret = $user->getOption( self::OPT_SECRET, false );
-		$completedSetup = $user->getOption( self::OPT_SECRET_SETUP, false);
+		$completedSetup = $user->getOption( self::OPT_SECRET_SETUP, false );
 
 		// If the setup was never completed, and secret was false, generate new secrets
-		if (!$completedSetup && $secret === false) {
+		if ( !$completedSetup && $secret === false ) {
 			// Generate a new secret
 			$secret = $this->generateSecrets( $user );
 			// Log action
-			LoggerFactory::getInstance('Google2FA')->info(
+			LoggerFactory::getInstance( 'Google2FA' )->info(
 				'Generated new token for {user}',
 				[ 'user' => $user->getName() ]
 			);
@@ -75,16 +75,15 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 		// Set rescue codes
 		$rescueCodes = [
-			$user->getOption(self::OPT_RESCUE_1),
-			$user->getOption(self::OPT_RESCUE_2),
-			$user->getOption(self::OPT_RESCUE_3)
+			$user->getOption( self::OPT_RESCUE_1 ),
+			$user->getOption( self::OPT_RESCUE_2 ),
+			$user->getOption( self::OPT_RESCUE_3 )
 		];
 
 		return AuthenticationResponse::newUI(
-			[ new Google2FactorAuthenticationRequest( $secret, (!$completedSetup), $rescueCodes ) ],
-			wfMessage('google2fa-info')
+			[ new Google2FactorAuthenticationRequest( $secret, ( !$completedSetup ), $rescueCodes ) ],
+			wfMessage( 'google2fa-info' )
 		);
-
 	}
 
 	/**
@@ -96,23 +95,22 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * @throws \Exception
 	 */
 	public function continueSecondaryAuthentication( $user, array $reqs ) {
-
 		// Fetch the secret
-		$secret = $user->getOption(self::OPT_SECRET, false);
-		$secretSetup = $user->getOption(self::OPT_SECRET_SETUP,false);
+		$secret = $user->getOption( self::OPT_SECRET, false );
+		$secretSetup = $user->getOption( self::OPT_SECRET_SETUP, false );
 
 		// Fetch rescue options
 		$rescueCodes = [
-			$user->getOption(self::OPT_RESCUE_1),
-			$user->getOption(self::OPT_RESCUE_3),
-			$user->getOption(self::OPT_RESCUE_2),
+			$user->getOption( self::OPT_RESCUE_1 ),
+			$user->getOption( self::OPT_RESCUE_3 ),
+			$user->getOption( self::OPT_RESCUE_2 ),
 		];
 
 		/** @var Google2FactorAuthenticationRequest $req */
 		$req = AuthenticationRequest::getRequestByClass( $reqs, Google2FactorAuthenticationRequest::class );
 
 		// If the user has given a rescue code, reset the OPT_SECRET_SETUP and show the form again
-		if ($req && in_array($req->token, $rescueCodes)) {
+		if ( $req && in_array( $req->token, $rescueCodes ) ) {
 
 			// Reset all the codes of the user
 			$this->resetSecretCodes( $user );
@@ -124,7 +122,7 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 			return $this->beginSecondaryAuthentication( $user, $reqs );
 
 		// Wrong token given upon new code
-		} else if ($req && !GoogleAuthenticator::verifyCode($secret, $req->token) && !$secretSetup) {
+		} elseif ( $req && !GoogleAuthenticator::verifyCode( $secret, $req->token ) && !$secretSetup ) {
 
 			LoggerFactory::getInstance( 'Google2FA' )->info(
 				'{user} gave a wrong code in the setup process.',
@@ -135,17 +133,17 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 			return $this->beginSecondaryAuthentication( $user, $reqs );
 
 		// We have a valid session when the code has been verified succesfully
-		} else if ( $req && GoogleAuthenticator::verifyCode( $secret, $req->token ) ) {
+		} elseif ( $req && GoogleAuthenticator::verifyCode( $secret, $req->token ) ) {
 
 			// The secret has been saved in to the DB and the given code was
 			// validated. Save it to the DB
-			if( $user->getOption(self::OPT_SECRET_SETUP, false ) === false ) {
+			if ( $user->getOption( self::OPT_SECRET_SETUP, false ) === false ) {
 
 				// Set option & save settings
 				$user->setOption( self::OPT_SECRET_SETUP, "1" );
 				$user->saveSettings();
 
-				LoggerFactory::getInstance('Google2FA')->info(
+				LoggerFactory::getInstance( 'Google2FA' )->info(
 					'Succesfully validated new secret for {user}',
 					[ 'user' => $user->getName() ]
 				);
@@ -155,8 +153,8 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 			return AuthenticationResponse::newPass();
 
 		// Invalid code given
-		} else if ( $req && !GoogleAuthenticator::verifyCode($secret, $req->token)) {
-			LoggerFactory::getInstance('Google2FA')->info( 'Invalid token for {user}', [ 'user' => $user->getName() ] );
+		} elseif ( $req && !GoogleAuthenticator::verifyCode( $secret, $req->token ) ) {
+			LoggerFactory::getInstance( 'Google2FA' )->info( 'Invalid token for {user}', [ 'user' => $user->getName() ] );
 		}
 
 		// Fetch the num of failures
@@ -170,11 +168,10 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 		// Return the authentication request
 		return AuthenticationResponse::newUI(
-			[ new Google2FactorAuthenticationRequest($secret) ],
+			[ new Google2FactorAuthenticationRequest( $secret ) ],
 			wfMessage( 'google2fa-login-failure' ),
 			'error'
 		);
-
 	}
 
 	/**
@@ -195,7 +192,6 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * @throws \Exception
 	 */
 	private function generateSecrets( $user ) {
-
 		$mainSecret = GoogleAuthenticator::generateSecret();
 
 		// Save secrets
@@ -209,7 +205,6 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 		// Return the first secret
 		return $mainSecret;
-
 	}
 
 	/**
@@ -220,12 +215,10 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * @return bool
 	 */
 	private function resetSecretCodes( $user, $resetMaster = true ) {
-
-
 		$user->setOption( self::OPT_SECRET_SETUP, false );
 
 		// We might not always the master code
-		if( $resetMaster ) {
+		if ( $resetMaster ) {
 			$user->setOption( self::OPT_SECRET, false );
 		}
 

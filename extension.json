@@ -16,8 +16,8 @@
 		"GoogleAuthenticatorAlias": "GoogleAuthenticator.i18n.alias.php"
 	},
 	"AutoloadClasses": {
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/Auth/AuthenticationRequest.php",
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/Auth/SecondaryAuthenticationProvider.php",
+		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/Auth/Google2FactorAuthenticationRequest.php",
+		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/Auth/Google2FactorSecondaryAuthenticationProvider.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover": "includes/Special/Google2FARecover.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks": "includes/Hooks.php",
 		"MediaWiki\\Extensions\\GoogleAuthenticator\\GoogleAuthenticator": "includes/GoogleAuthenticator.php"

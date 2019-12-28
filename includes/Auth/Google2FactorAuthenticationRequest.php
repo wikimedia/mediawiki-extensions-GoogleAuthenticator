@@ -49,10 +49,9 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 	 * @see AuthenticationRequest::getFieldInfo()
 	 */
 	public function getFieldInfo() {
-
 		$fields = [];
 
-		if( $this->newlyGenerated ) {
+		if ( $this->newlyGenerated ) {
 
 			// Secret code field
 			$fields['secret'] = [
@@ -69,8 +68,8 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 			// Rescue codes field
 			$fields['rescue'] = [
 				'type' => 'null',
-				'label' => wfMessage('google2fa-rescue-codes', $this->rescueCodes[0],
-					$this->rescueCodes[1], $this->rescueCodes[2]),
+				'label' => wfMessage( 'google2fa-rescue-codes', $this->rescueCodes[0],
+					$this->rescueCodes[1], $this->rescueCodes[2] ),
 				'help' => '',
 				'skippable' => true
 			];
@@ -86,12 +85,12 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 				'optional' => false
 		];
 
-		if( !$this->newlyGenerated ) {
+		if ( !$this->newlyGenerated ) {
 
 			// Token lost field
 			$fields['tokenlost'] = [
 				'type' => 'null',
-				'label' => wfMessage('google2fa-token-lost', $this->username),
+				'label' => wfMessage( 'google2fa-token-lost', $this->username ),
 				'help' => '',
 				'skippable' => true
 			];
@@ -99,7 +98,6 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 		}
 
 		return $fields;
-
 	}
 
 	/**

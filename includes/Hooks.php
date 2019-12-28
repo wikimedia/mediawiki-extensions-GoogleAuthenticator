@@ -22,14 +22,12 @@ class Hooks {
 	 * @return bool
 	 */
 	public static function onBeforePageDisplay( \OutputPage &$out, \Skin &$skin ) {
-
 		// We only want to load the required javascript and CSS files if we are on the
 		// login page. We do this to prevent users from loading images externally with using the
 		// span.g2faqr script.
-		if( $out->getTitle()->getText() == wfMessage('login')->text() ) {
+		if ( $out->getTitle()->getText() == wfMessage( 'login' )->text() ) {
 			$out->addModules( "ext.Google2FA" );
 		}
-
 	}
 
 }

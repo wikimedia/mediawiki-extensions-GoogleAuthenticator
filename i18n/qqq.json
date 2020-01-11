@@ -1,0 +1,11 @@
+{
+	"@metadata": {},
+	"googleauthenticator-desc": "{{desc|name=GoogleAuthenticator}}",
+	"google2fa-info": "Used as info on login",
+	"google2fa-token-label": "Used as label on login",
+	"google2fa-secret-img": "Used as label on login",
+	"google2fa-rescue-codes": "Used as label on login",
+	"google2fa-login-failure": "Used as error message on login",
+	"google2fa-login-retry-limit": "Used as error message on login",
+	"google2fa-resetted": "Used as info on login"
+}

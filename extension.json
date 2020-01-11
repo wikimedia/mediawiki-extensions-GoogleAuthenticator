@@ -3,7 +3,7 @@
 	"author": "Youri van den Bogert",
 	"version": "1.0.0",
 	"url": "https://www.xl-knowledge.nl",
-	"descriptionmsg": "ga-desc",
+	"descriptionmsg": "googleauthenticator-desc",
 	"license-name": "GPL-2.0+",
 	"type": "other",
 	"requires": {

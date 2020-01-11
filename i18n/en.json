@@ -4,6 +4,7 @@
 			"Youri van den Bogert"
 		]
 	},
+	"googleauthenticator-desc": "Allow users to login with Google two factor authentification",
 	"google2fa-info": "You are required to use 2 factor authentication on this wiki.",
 	"google2fa-token-label": "Token",
 	"google2fa-secret-img": "Scan the QR below <span class=\"g2faqr\">$1</span> or use the generated key: <strong>$2</strong> to save this application in your GoogleAuthenticator app",

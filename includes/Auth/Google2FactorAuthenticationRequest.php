@@ -22,10 +22,10 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 	/** @var string */
 	public $token;
 
-	/** @var bool  */
+	/** @var bool */
 	private $newlyGenerated = false;
 
-	/** @var null|string  */
+	/** @var null|string */
 	private $secret = null;
 
 	/** @var array */

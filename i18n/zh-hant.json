@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xiplus"
+		]
+	},
+	"googleauthenticator-desc": "允許使用者用Google雙重認證來登入",
+	"google2fa-info": "您必須在此Wiki上使用雙重認證。",
+	"google2fa-token-label": "權杖",
+	"google2fa-secret-img": "掃描下面這個QR碼 <span class=\"g2faqr\">$1</span> 或使用產生的金鑰：<strong>$2</strong>來在您的GoogleAuthenticator應用程式上保存此程式。",
+	"google2fa-rescue-codes": "保存在以下三個代碼（寫下它們！）用來當作救援金鑰：<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "給出的代碼無效，再試一次。",
+	"google2fa-login-retry-limit": "所有給出的代碼皆無效，稍後再試一次。",
+	"google2fa-resetted": "您已輸入救援代碼。再次登入以建立新的認證和救援代碼。"
+}

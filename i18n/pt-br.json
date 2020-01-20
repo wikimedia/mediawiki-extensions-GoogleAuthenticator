@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"googleauthenticator-desc": "Permitir que os usuários entrem com a autenticação de dois fatores do Google",
+	"google2fa-info": "Você é obrigado a usar a autenticação de dois fatores nessa wiki.",
+	"google2fa-token-label": "Token",
+	"google2fa-secret-img": "Escaneie QR abaixo <span class=\"g2faqr\">$1</span> ou use a chave gerada: <strong>$2</strong> para salvar este aplicativo no seu aplicativo GoogleAuthenticator",
+	"google2fa-rescue-codes": "Salve os três códigos (anote-os!) Abaixo para usá-los como chaves de recuperação:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Código inválido fornecido. Tente novamente.",
+	"google2fa-login-retry-limit": "Todos os códigos fornecidos são inválidos. Tente mais tarde.",
+	"google2fa-resetted": "Você digitou um código de resgate. Entre novamente para criar novos códigos de autenticação e recuperação."
+}

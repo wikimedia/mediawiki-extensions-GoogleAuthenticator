@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rail"
+		]
+	},
+	"googleauthenticator-desc": "Umożliwia użytkownikom logowanie z wykorzystaniem weryfikacji dwuetapowej od Google",
+	"google2fa-info": "Używanie weryfikacji dwuetapowej jest wymagane na tej wiki.",
+	"google2fa-token-label": "Kod",
+	"google2fa-secret-img": "Zeskanuj kod QR poniżej span class=\"g2faqr\">$1</span> lub użyj wygenerowanego kodu: <strong>$2</strong> aby zapisać tę stronę w aplikacji Google Authenticator.",
+	"google2fa-rescue-codes": "Zachowaj trzy poniższe kody (zapisz je!) aby użyć ich w razie konieczności:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Podano błędny kod. Spróbuj ponownie.",
+	"google2fa-login-retry-limit": "Wszystkie podane kody były nieprawidłowe. Spróbuj ponownie później.",
+	"google2fa-resetted": "Podano kod zapasowy. Zaloguj się ponownie aby stworzyć nowe kody zapasowe."
+}

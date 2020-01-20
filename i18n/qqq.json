@@ -1,5 +1,5 @@
 {
-	"@metadata": {},
+	"@metadata": [],
 	"googleauthenticator-desc": "{{desc|name=GoogleAuthenticator}}",
 	"google2fa-info": "Used as info on login",
 	"google2fa-token-label": "Used as label on login",

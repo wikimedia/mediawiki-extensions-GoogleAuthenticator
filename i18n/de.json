@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiBayer"
+		]
+	},
+	"googleauthenticator-desc": "Erlauben Sie Benutzern die Anmeldung mit Google Zwei-Faktor-Authentifizierung",
+	"google2fa-info": "Sie müssen in diesem Wiki die 2-Faktor-Authentifizierung verwenden.",
+	"google2fa-token-label": "Token",
+	"google2fa-secret-img": "Scannen Sie den QR-Code unter <span class=\"g2faqr\"> $1 </span> oder verwenden Sie den generierten Schlüssel: <strong> $2 </ strong>, um diese Anwendung in Ihrer GoogleAuthenticator-App zu speichern",
+	"google2fa-rescue-codes": "Speichern Sie die drei untenstehenden Codes (schreiben Sie sie auf!), um sie als Rettungsschlüssel zu verwenden:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Ungültiger Code angegeben. Versuchen Sie es erneut.",
+	"google2fa-login-retry-limit": "Alle angegebenen Codes waren ungültig. Versuchen Sie es später noch einmal.",
+	"google2fa-resetted": "Sie haben einen Rettungscode eingegeben. Melden Sie sich erneut an, um neue Authentifizierungs- und Rettungscodes zu erstellen."
+}

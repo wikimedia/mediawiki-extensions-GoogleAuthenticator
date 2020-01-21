@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko",
+			"Thibaut120094"
+		]
+	},
+	"googleauthenticator-desc": "Permettre aux utilisateurs de se connecter avec l’authentification à deux facteurs de Google",
+	"google2fa-info": "Vous devez utiliser l’authentification à deux facteurs sur ce wiki.",
+	"google2fa-token-label": "Jeton",
+	"google2fa-secret-img": "Scanner le code QR ci-dessous <span class=\"g2faqr\">$1</span> ou utilisez la clé générée : <strong>$2</strong> pour enregistrer cette application dans votre application GoogleAuthenticator",
+	"google2fa-rescue-codes": "Enregistrer les trois codes (écrivez-les !) ci-dessous pour les utiliser comme clés de secours :<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Code fourni non valide. Réessayer.",
+	"google2fa-login-retry-limit": "Aucun des codes fournis n’est valide. Réessayez ultérieurement.",
+	"google2fa-resetted": "Vous avez saisi un code de secours. Reconnectez-vous pour créer une nouvelle authentification et de nouveaux codes de secours."
+}

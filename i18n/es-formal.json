@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"google2fa-rescue-codes": "Guarde los tres códigos siguientes (escríbalos) para utilizarlos como claves de rescate:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Se proporcionó un código no válido. Inténtelo de nuevo."
+}

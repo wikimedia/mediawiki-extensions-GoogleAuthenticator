@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"SwornToTranslate29"
+			"SwornToTranslate29",
+			"Hedda"
 		]
 	},
-	"googleauthenticator-desc": "Kullanıcıların Google iki faktörlü kimlik doğrulama ile giriş yapmasına izin ver",
+	"googleauthenticator-desc": "Kullanıcıların Google'ın iki faktörlü kimlik doğrulaması ile giriş yapmasına izin ver",
 	"google2fa-info": "Bu vikide iki faktörlü kimlik doğrulaması kullanmanız gerekmektedir.",
+	"google2fa-token-label": "Anahtar",
 	"google2fa-secret-img": "Bu uygulamayı GoogleAuthenticor'unuzda kaydetmek için aşağıdaki QR kodunu tarayın <span class=\"g2faqr\">$1</span> ya da oluşturulan anahtarı kullanın: <strong>$2</strong>",
 	"google2fa-rescue-codes": "Üç kodu kurtarma anahtarı olarak kullanmak için aşağıya kaydedin (onları aşağıya yazın!): </ul><li>$1</li><li>$2</li><li>$3</li></ul>",
 	"google2fa-login-failure": "Geçersiz kod girildi. Tekrar deneyin.",

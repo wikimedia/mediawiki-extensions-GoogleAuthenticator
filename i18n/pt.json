@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mansil"
+		]
+	},
+	"googleauthenticator-desc": "Permitir que os utilizadores iniciem a sessão com a autenticação de dois fatores da Google",
+	"google2fa-info": "É obrigado a utilizar a autenticação de dois fatores nesta wiki.",
+	"google2fa-token-label": "Chave"
+}

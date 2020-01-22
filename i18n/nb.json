@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"googleauthenticator-desc": "La brukere logge inn med Googles totrinns pålogging",
+	"google2fa-info": "Du må bruke totrinns pålogging på denne wikien.",
+	"google2fa-token-label": "Nøkkel",
+	"google2fa-secret-img": "Skann QR-koden nedenfor <span class=\"g2faqr\">$1</span> eller bruk den genererte nøkkelen: <strong>$2</strong> for å lagre denne applikasjonen i din Google Authenticator-app.",
+	"google2fa-rescue-codes": "Ta vare på de tre kodene nedenfor (skriv dem ned!) for å bruke dem som reservenøkler: <ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Ugyldig kode gitt. Prøv igjen.",
+	"google2fa-login-retry-limit": "Alle de gitte kodene var ugyldige. Prøv igjen senere.",
+	"google2fa-resetted": "Du har skrevet inn en reservekode. Logg inn igjen for å opprette ny autentisering og nye reservekoder."
+}

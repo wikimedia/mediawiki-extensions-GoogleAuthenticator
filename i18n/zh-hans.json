@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"VulpesVulpes825"
+		]
+	},
+	"googleauthenticator-desc": "允许用户使用Google双重认证来登陆",
+	"google2fa-info": "您必须在此Wiki上使用双重认证。",
+	"google2fa-token-label": "令牌",
+	"google2fa-secret-img": "扫描下方的二维码<span class=\"g2faqr\">$1</span>或使用生成的密钥：<strong>$2</strong>将此引用保存在Google身份验证器应用程序中",
+	"google2fa-rescue-codes": "保存下面这三个救援代码（把它们写下来）：<ul><li>$1</li><li>$2</li><li>$3</li></ul>。",
+	"google2fa-login-failure": "提供的代码无效。请稍后重试。",
+	"google2fa-login-retry-limit": "所有提供的代码均无效。请稍后重试。",
+	"google2fa-resetted": "您已输入救援代码。再次登陆以便创建新认证和救援代码。"
+}

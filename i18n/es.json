@@ -4,7 +4,12 @@
 			"Fitoschido"
 		]
 	},
+	"googleauthenticator-desc": "Permite a los usuarios acceder a sus cuentas con la autenticación en dos fases de Google",
+	"google2fa-info": "En este wiki es obligatoria la autenticación en dos fases.",
 	"google2fa-token-label": "Ficha",
+	"google2fa-secret-img": "Escanea el QR siguiente <span class=\"g2faqr\">$1</span> o utiliza la clave generada: <strong>$2</strong> para guardar esta aplicación en Google Authenticator",
 	"google2fa-rescue-codes": "Guarda los tres códigos siguientes (¡escríbelos!) para utilizarlos como claves de rescate:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
-	"google2fa-login-failure": "Se proporcionó un código no válido. Inténtalo de nuevo."
+	"google2fa-login-failure": "Se proporcionó un código no válido. Inténtalo de nuevo.",
+	"google2fa-login-retry-limit": "Ninguno de los códigos brindados es válido. Inténtalo de nuevo más tarde.",
+	"google2fa-resetted": "Se ha proporcionado un código de rescate. Accede de nuevo para crear códigos nuevos de autenticación y rescate."
 }

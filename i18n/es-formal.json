@@ -4,6 +4,9 @@
 			"Fitoschido"
 		]
 	},
+	"google2fa-secret-img": "Escanee el QR siguiente <span class=\"g2faqr\">$1</span> o utilice la clave generada: <strong>$2</strong> para guardar esta aplicación en Google Authenticator",
 	"google2fa-rescue-codes": "Guarde los tres códigos siguientes (escríbalos) para utilizarlos como claves de rescate:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
-	"google2fa-login-failure": "Se proporcionó un código no válido. Inténtelo de nuevo."
+	"google2fa-login-failure": "Se proporcionó un código no válido. Inténtelo de nuevo.",
+	"google2fa-login-retry-limit": "Ninguno de los códigos brindados es válido. Inténtelo de nuevo más tarde.",
+	"google2fa-resetted": "Se ha proporcionado un código de rescate. Acceda de nuevo para crear códigos nuevos de autenticación y rescate."
 }

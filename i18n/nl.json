@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Youri van den Bogert",
-			"Mainframe98"
+			"Mainframe98",
+			"Youri van den Bogert"
 		]
 	},
 	"googleauthenticator-desc": "Laat gebruikers toe om zich aan te melden met Google's twee-factor-authenticatie",

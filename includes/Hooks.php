@@ -17,8 +17,8 @@ namespace MediaWiki\Extensions\GoogleAuthenticator;
 class Hooks {
 
 	/**
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param \OutputPage &$out
+	 * @param \Skin &$skin
 	 * @return bool
 	 */
 	public static function onBeforePageDisplay( \OutputPage &$out, \Skin &$skin ) {

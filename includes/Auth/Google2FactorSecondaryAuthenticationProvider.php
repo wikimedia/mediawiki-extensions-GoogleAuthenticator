@@ -89,7 +89,7 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	/**
 	 * Validates the user's input
 	 *
-	 * @param $user
+	 * @param User $user
 	 * @param array $reqs
 	 * @return AuthenticationResponse
 	 * @throws \Exception
@@ -210,7 +210,7 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	/**
 	 * Resets all the codes for the given user
 	 *
-	 * @param $user
+	 * @param User $user
 	 * @param bool $resetMaster
 	 * @return bool
 	 */

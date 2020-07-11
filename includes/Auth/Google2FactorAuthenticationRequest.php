@@ -34,7 +34,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 	/**
 	 * Google2FactorAuthenticationRequest constructor.
 	 *
-	 * @param $secret
+	 * @param string|null $secret
 	 * @param bool $newlyGenerated
 	 * @param array $rescueCodes
 	 */
@@ -103,7 +103,7 @@ class Google2FactorAuthenticationRequest extends AuthenticationRequest {
 	/**
 	 * Returns the base64 of the QR code
 	 *
-	 * @param $secret
+	 * @param string|null $secret
 	 * @return string
 	 * @throws \Exception
 	 */

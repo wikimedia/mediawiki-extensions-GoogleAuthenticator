@@ -32,8 +32,8 @@ class GoogleAuthenticator {
 	/**
 	 * Verifies the given code
 	 *
-	 * @param $secret
-	 * @param $code
+	 * @param string|null $secret
+	 * @param string $code
 	 * @param int $discrepancy
 	 * @param null $currentTimeSlice
 	 * @return bool
@@ -129,7 +129,7 @@ class GoogleAuthenticator {
 	}
 
 	/**
-	 * @param $secret
+	 * @param string|null $secret
 	 * @param null $timeSlice
 	 * @return string
 	 */
@@ -163,7 +163,7 @@ class GoogleAuthenticator {
 	/**
 	 * Helper class to decode base32.
 	 *
-	 * @param $secret
+	 * @param string|null $secret
 	 *
 	 * @return bool|string
 	 */

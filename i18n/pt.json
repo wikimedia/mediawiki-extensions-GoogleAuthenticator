@@ -1,10 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hamilton Abreu",
 			"Mansil"
 		]
 	},
 	"googleauthenticator-desc": "Permitir que os utilizadores iniciem a sessão com a autenticação de dois fatores da Google",
 	"google2fa-info": "É obrigado a utilizar a autenticação de dois fatores nesta wiki.",
-	"google2fa-token-label": "Chave"
+	"google2fa-token-label": "Chave",
+	"google2fa-secret-img": "Fotografe o QR abaixo <span class=\"g2faqr\">$1</span> ou use a chave gerada: <strong>$2</strong> para gravar esta aplicação na sua aplicação GoogleAuthenticator",
+	"google2fa-rescue-codes": "Preserve os três códigos abaixo (anote-os!) para usá-los como chaves de recuperação:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Foi fornecido um código inválido. Tente novamente.",
+	"google2fa-login-retry-limit": "Todos os códigos fornecidos eram inválidos. Tente novamente mais tarde.",
+	"google2fa-resetted": "Introduziu um código de recuperação. Inicie outra sessão para criar novos códigos de autenticação e recuperação."
 }

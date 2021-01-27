@@ -17,11 +17,10 @@ namespace MediaWiki\Extensions\GoogleAuthenticator;
 class Hooks {
 
 	/**
-	 * @param \OutputPage &$out
-	 * @param \Skin &$skin
-	 * @return bool
+	 * @param \OutputPage $out
+	 * @param \Skin $skin
 	 */
-	public static function onBeforePageDisplay( \OutputPage &$out, \Skin &$skin ) {
+	public static function onBeforePageDisplay( \OutputPage $out, \Skin $skin ) {
 		// We only want to load the required javascript and CSS files if we are on the
 		// login page. We do this to prevent users from loading images externally with using the
 		// span.g2faqr script.

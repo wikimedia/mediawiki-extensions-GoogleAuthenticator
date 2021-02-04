@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
 	"googleauthenticator-desc": "Låt användare logga in med Googles tvåstegsverifiering",
+	"google2fa-info": "Du måste använda tvåfaktorsinloggning på den här wikin.",
 	"google2fa-token-label": "Nyckel",
+	"google2fa-login-failure": "Ogiltig kod angiven. Försök igen.",
 	"google2fa-login-retry-limit": "Alla angivna koder har ogiltiga. Försök igen senare."
 }

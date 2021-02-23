@@ -4,5 +4,9 @@
 			"Joetaras"
 		]
 	},
-	"google2fa-token-label": "Gettone"
+	"googleauthenticator-desc": "Permettea le utinde de trasè cu l'autendicazione a doje fattore de Google",
+	"google2fa-info": "Ha ausà l'autendicazione a doje fattore sus a sta uicchi.",
+	"google2fa-token-label": "Gettone",
+	"google2fa-login-failure": "Codece date invalide. Pruève arrete.",
+	"google2fa-login-retry-limit": "Tutte le codece date sò invalide. Pruève cchiù tarde-"
 }

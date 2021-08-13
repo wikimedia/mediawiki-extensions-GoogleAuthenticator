@@ -19,6 +19,7 @@ use MediaWiki\Auth\AbstractSecondaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuthenticationProvider {
 
@@ -95,15 +96,16 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * @throws \Exception
 	 */
 	public function continueSecondaryAuthentication( $user, array $reqs ) {
+		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
 		// Fetch the secret
-		$secret = $user->getOption( self::OPT_SECRET, false );
-		$secretSetup = $user->getOption( self::OPT_SECRET_SETUP, false );
+		$secret = $userOptionsManager->getOption( $user, self::OPT_SECRET, false );
+		$secretSetup = $userOptionsManager->getOption( $user, self::OPT_SECRET_SETUP, false );
 
 		// Fetch rescue options
 		$rescueCodes = [
-			$user->getOption( self::OPT_RESCUE_1 ),
-			$user->getOption( self::OPT_RESCUE_3 ),
-			$user->getOption( self::OPT_RESCUE_2 ),
+			$userOptionsManager->getOption( $user, self::OPT_RESCUE_1 ),
+			$userOptionsManager->getOption( $user, self::OPT_RESCUE_3 ),
+			$userOptionsManager->getOption( $user, self::OPT_RESCUE_2 ),
 		];
 
 		/** @var Google2FactorAuthenticationRequest $req */
@@ -140,8 +142,8 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 			if ( $user->getOption( self::OPT_SECRET_SETUP, false ) === false ) {
 
 				// Set option & save settings
-				$user->setOption( self::OPT_SECRET_SETUP, "1" );
-				$user->saveSettings();
+				$userOptionsManager->setOption( $user, self::OPT_SECRET_SETUP, "1" );
+				$userOptionsManager->saveOptions( $user );
 
 				LoggerFactory::getInstance( 'Google2FA' )->info(
 					'Succesfully validated new secret for {user}',
@@ -210,28 +212,29 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	/**
 	 * Resets all the codes for the given user
 	 *
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param bool $resetMaster
 	 * @return bool
 	 */
 	private function resetSecretCodes( $user, $resetMaster = true ) {
-		$user->setOption( self::OPT_SECRET_SETUP, false );
+		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, self::OPT_SECRET_SETUP, false );
 
 		// We might not always the master code
 		if ( $resetMaster ) {
-			$user->setOption( self::OPT_SECRET, false );
+			$userOptionsManager->setOption( $user, self::OPT_SECRET, false );
 		}
 
 		// Reset rescue codes
-		$user->setOption( self::OPT_RESCUE_1, false );
-		$user->setOption( self::OPT_RESCUE_2, false );
-		$user->setOption( self::OPT_RESCUE_3, false );
+		$userOptionsManager->setOption( $user, self::OPT_RESCUE_1, false );
+		$userOptionsManager->setOption( $user, self::OPT_RESCUE_2, false );
+		$userOptionsManager->setOption( $user, self::OPT_RESCUE_3, false );
 
 		// Reset mail sent option
-		$user->setOption( Google2FARecover::OPT_WAS_MAIL_SENT, false );
+		$userOptionsManager->setOption( $user, Google2FARecover::OPT_WAS_MAIL_SENT, false );
 
 		// Save settings
-		$user->saveSettings();
+		$userOptionsManager->saveOptions( $user );
 
 		return true;
 	}

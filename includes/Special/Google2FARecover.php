@@ -16,18 +16,28 @@
 namespace MediaWiki\Extensions\GoogleAuthenticator;
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\User\UserOptionsManager;
+use SpecialPage;
+use User;
 
-class Google2FARecover extends \SpecialPage {
+class Google2FARecover extends SpecialPage {
 
 	const OPT_WAS_MAIL_SENT = 'Google2FA_Recover_mail_sent';
 
-	public function __construct() {
+	/** @var UserOptionsManager */
+	private $userOptionsManager;
+
+	/**
+	 * @param UserOptionsManager $userOptionsManager
+	 */
+	public function __construct( UserOptionsManager $userOptionsManager ) {
 		parent::__construct( 'Google2FARecover' );
+		$this->userOptionsManager = $userOptionsManager;
 	}
 
 	public function execute( $par ) {
 		$requestForUser = $this->getRequest()->getText( 'user', false );
-		$user = ( $requestForUser ) ? \User::newFromName( $requestForUser ) : false;
+		$user = ( $requestForUser ) ? User::newFromName( $requestForUser ) : false;
 
 		// Invalid user
 		if ( !$requestForUser && !$user ) {
@@ -38,7 +48,7 @@ class Google2FARecover extends \SpecialPage {
 			$this->getOutput()->addWikiTextAsInterface( wfMessage( 'google2fa-email-not-confirmed' ) );
 
 		// Recover email was already sent
-		} elseif ( $user->getOption( self::OPT_WAS_MAIL_SENT, false ) !== false ) {
+		} elseif ( $this->userOptionsManager->getOption( $user, self::OPT_WAS_MAIL_SENT, false ) !== false ) {
 			$this->getOutput()->addWikiTextAsInterface( wfMessage( 'google2fa-mail-already-sent' ) );
 
 		// Sent recover codes
@@ -46,9 +56,18 @@ class Google2FARecover extends \SpecialPage {
 
 			$body = wfMessage(
 				'google2fa-mail-body',
-				$user->getOption( Google2FactorSecondaryAuthenticationProvider::OPT_RESCUE_1 ),
-				$user->getOption( Google2FactorSecondaryAuthenticationProvider::OPT_RESCUE_2 ),
-				$user->getOption( Google2FactorSecondaryAuthenticationProvider::OPT_RESCUE_3 )
+				$this->userOptionsManager->getOption(
+					$user,
+					Google2FactorSecondaryAuthenticationProvider::OPT_RESCUE_1
+				),
+				$this->userOptionsManager->getOption(
+					$user,
+					Google2FactorSecondaryAuthenticationProvider::OPT_RESCUE_2
+				),
+				$this->userOptionsManager->getOption(
+					$user,
+					Google2FactorSecondaryAuthenticationProvider::OPT_RESCUE_3
+				)
 			);
 
 			$wasMailedSuccesfully = $user->sendMail(
@@ -61,8 +80,8 @@ class Google2FARecover extends \SpecialPage {
 			} else {
 
 				// Update mail sent var
-				$user->setOption( self::OPT_WAS_MAIL_SENT, '1' );
-				$user->saveSettings();
+				$this->userOptionsManager->setOption( $user, self::OPT_WAS_MAIL_SENT, '1' );
+				$this->userOptionsManager->saveOptions( $user );
 
 				// Output info
 				$this->getOutput()->addWikiTextAsInterface( wfMessage( 'google2fa-mail-sent' ) );

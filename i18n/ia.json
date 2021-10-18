@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"googleauthenticator-desc": "Permitte que usatores aperi session con le authentication bifactorial de Google",
+	"google2fa-info": "Es obligatori usar authentication bifactorial sur iste wiki.",
+	"google2fa-token-label": "Token",
+	"google2fa-secret-img": "Scanna le codice QR infra <span class=\"g2faqr\">$1</span> o usa le clave generate: <strong>$2</strong> pro salveguardar iste application in tu app GoogleAuthenticator",
+	"google2fa-rescue-codes": "Salveguarda le tres codices sequente (scribe los!) pro usar los como claves de recuperation:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Le codice fornite non es valide. Tenta lo de novo.",
+	"google2fa-login-retry-limit": "Tote le codices fornite es invalide. Tenta lo de novo.",
+	"google2fa-resetted": "Tu ha inserite un codice de recuperation. Aperi session de novo pro crear nove codices de authentication e de recuperation."
+}

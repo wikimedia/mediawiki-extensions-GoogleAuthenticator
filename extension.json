@@ -7,7 +7,7 @@
 	"license-name": "GPL-2.0+",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.32.0"
+		"MediaWiki": ">= 1.35.0"
 	},
 	"MessagesDirs": {
 		"GoogleAuthenticator": "i18n"
@@ -26,7 +26,12 @@
 		"BeforePageDisplay": "MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks::onBeforePageDisplay"
 	},
 	"SpecialPages": {
-		"Google2FARecover": "MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover"
+		"Google2FARecover": {
+			"class": "MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover",
+			"services": [
+				"UserOptionsManager"
+			]
+		}
 	},
 	"config": {
 		"GAIssuer": "__SITENAME__"

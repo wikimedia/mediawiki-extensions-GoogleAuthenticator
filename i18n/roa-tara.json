@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"googleauthenticator-desc": "Permettea le utinde de trasè cu l'autendicazione a doje fattore de Google",
+	"google2fa-info": "Ha ausà l'autendicazione a doje fattore sus a sta uicchi.",
+	"google2fa-token-label": "Gettone",
+	"google2fa-secret-img": "Scanzione 'u codece QR aqquà sotte <span class=\"g2faqr\">$1</span> o ause 'u chiave generate: <strong>$2</strong> pe reggistrà sta applecazione jndr'à l'app toje GoogleAuthenticator",
+	"google2fa-rescue-codes": "Reggìstre le ttre codece (scrive une sotte a l'otre!) aqquà sotte ausale cumme chiave de recupere:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Codece date invalide. Pruève arrete.",
+	"google2fa-login-retry-limit": "Tutte le codece date sò invalide. Pruève cchiù tarde-",
+	"google2fa-resetted": "E' mise 'nu codece de recupere. Tràse arrete pe ccrejà 'na autendicazione nove e le codece de recupere."
+}

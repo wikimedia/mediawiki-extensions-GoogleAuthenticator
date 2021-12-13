@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Jakeukalane"
 		]
 	},
 	"googleauthenticator-desc": "Permite a los usuarios acceder a sus cuentas con la autenticación en dos fases de Google",
-	"google2fa-info": "En este wiki es obligatoria la autenticación en dos fases.",
+	"google2fa-info": "En esta wiki es obligatoria la autenticación en dos fases.",
 	"google2fa-token-label": "Ficha",
 	"google2fa-secret-img": "Escanea el QR siguiente <span class=\"g2faqr\">$1</span> o utiliza la clave generada: <strong>$2</strong> para guardar esta aplicación en Google Authenticator",
 	"google2fa-rescue-codes": "Guarda los tres códigos siguientes (¡escríbelos!) para utilizarlos como claves de rescate:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",

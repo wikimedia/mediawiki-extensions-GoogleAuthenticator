@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Veikk0.ma"
+		]
+	},
+	"googleauthenticator-desc": "Mahdollistaa käyttäjien kirjautumisen Googlen kaksivaiheisella vahvistuksella",
+	"google2fa-info": "Sinun tulee käyttää kaksivaiheista vahvistusta tässä wikissä.",
+	"google2fa-token-label": "Vahvistuskoodi",
+	"google2fa-secret-img": "Skannaa kohdassa <span class=\"g2faqr\">$1</span> oleva QR-koodi tai käytä koodia <strong>$2</strong> tallentaaksesi tämän sovelluksen GoogleAuthenticator-sovellukseesi",
+	"google2fa-rescue-codes": "Tallenna alla olevat kolme koodia (kirjoita ne muistiin!) jotta voit käyttää niitä palautusavaimina :<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Koodi oli väärin. Yritä uudelleen.",
+	"google2fa-login-retry-limit": "Kaikki koodit olivat väärin. Yritä uudelleen myöhemmin.",
+	"google2fa-resetted": "Olet syöttänyt palautuskoodin. Kirjaudu sisään uudelleen luodaksesi uudet varmistus- ja palautuskoodit."
+}

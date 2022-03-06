@@ -13,7 +13,7 @@
  * @url: http://www.xl-knowledge.nl/
  */
 
-namespace MediaWiki\Extensions\GoogleAuthenticator;
+namespace MediaWiki\Extension\GoogleAuthenticator;
 
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserOptionsManager;

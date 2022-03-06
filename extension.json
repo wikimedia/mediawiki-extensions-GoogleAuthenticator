@@ -16,18 +16,18 @@
 		"GoogleAuthenticatorAlias": "GoogleAuthenticator.i18n.alias.php"
 	},
 	"AutoloadClasses": {
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/Auth/Google2FactorAuthenticationRequest.php",
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/Auth/Google2FactorSecondaryAuthenticationProvider.php",
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover": "includes/Special/Google2FARecover.php",
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks": "includes/Hooks.php",
-		"MediaWiki\\Extensions\\GoogleAuthenticator\\GoogleAuthenticator": "includes/GoogleAuthenticator.php"
+		"MediaWiki\\Extension\\GoogleAuthenticator\\Google2FactorAuthenticationRequest": "includes/Auth/Google2FactorAuthenticationRequest.php",
+		"MediaWiki\\Extension\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": "includes/Auth/Google2FactorSecondaryAuthenticationProvider.php",
+		"MediaWiki\\Extension\\GoogleAuthenticator\\Google2FARecover": "includes/Special/Google2FARecover.php",
+		"MediaWiki\\Extension\\GoogleAuthenticator\\Hooks": "includes/Hooks.php",
+		"MediaWiki\\Extension\\GoogleAuthenticator\\GoogleAuthenticator": "includes/GoogleAuthenticator.php"
 	},
 	"Hooks": {
-		"BeforePageDisplay": "MediaWiki\\Extensions\\GoogleAuthenticator\\Hooks::onBeforePageDisplay"
+		"BeforePageDisplay": "MediaWiki\\Extension\\GoogleAuthenticator\\Hooks::onBeforePageDisplay"
 	},
 	"SpecialPages": {
 		"Google2FARecover": {
-			"class": "MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FARecover",
+			"class": "MediaWiki\\Extension\\GoogleAuthenticator\\Google2FARecover",
 			"services": [
 				"UserOptionsManager"
 			]
@@ -38,8 +38,8 @@
 	},
 	"AuthManagerAutoConfig": {
 		"secondaryauth": {
-			"MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": {
-				"class": "MediaWiki\\Extensions\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider",
+			"MediaWiki\\Extension\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider",
 				"sort": 50
 			}
 		}

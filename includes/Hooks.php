@@ -12,7 +12,7 @@
  * @author: Youri van den Bogert
  * @url: http://www.xl-knowledge.nl/
  */
-namespace MediaWiki\Extensions\GoogleAuthenticator;
+namespace MediaWiki\Extension\GoogleAuthenticator;
 
 class Hooks {
 

@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jdx",
 			"Rail"
 		]
 	},
-	"googleauthenticator-desc": "Umożliwia użytkownikom logowanie z wykorzystaniem weryfikacji dwuetapowej od Google",
-	"google2fa-info": "Używanie weryfikacji dwuetapowej jest wymagane na tej wiki.",
+	"googleauthenticator-desc": "Umożliwia użytkownikom logowanie z wykorzystaniem uwierzytelniania dwuskładnikowego od Google",
+	"google2fa-info": "Używanie uwierzytelniania dwuskładnikowego na tej wiki jest wymagane.",
 	"google2fa-token-label": "Kod",
 	"google2fa-secret-img": "Zeskanuj kod QR poniżej span class=\"g2faqr\">$1</span> lub użyj wygenerowanego kodu: <strong>$2</strong> aby zapisać tę stronę w aplikacji Google Authenticator.",
 	"google2fa-rescue-codes": "Zachowaj trzy poniższe kody (zapisz je!) aby użyć ich w razie konieczności:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",

@@ -60,8 +60,9 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 	 * @throws \Exception
 	 */
 	public function beginSecondaryAuthentication( $user, array $reqs ) {
-		$secret = $user->getOption( self::OPT_SECRET, false );
-		$completedSetup = $user->getOption( self::OPT_SECRET_SETUP, false );
+		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
+		$secret = $userOptionsManager->getOption( $user, self::OPT_SECRET, false );
+		$completedSetup = $userOptionsManager->getOption( $user, self::OPT_SECRET_SETUP, false );
 
 		// If the setup was never completed, and secret was false, generate new secrets
 		if ( !$completedSetup && $secret === false ) {
@@ -76,9 +77,9 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 		// Set rescue codes
 		$rescueCodes = [
-			$user->getOption( self::OPT_RESCUE_1 ),
-			$user->getOption( self::OPT_RESCUE_2 ),
-			$user->getOption( self::OPT_RESCUE_3 )
+			$userOptionsManager->getOption( $user, self::OPT_RESCUE_1 ),
+			$userOptionsManager->getOption( $user, self::OPT_RESCUE_2 ),
+			$userOptionsManager->getOption( $user, self::OPT_RESCUE_3 )
 		];
 
 		return AuthenticationResponse::newUI(
@@ -139,7 +140,7 @@ class Google2FactorSecondaryAuthenticationProvider extends AbstractSecondaryAuth
 
 			// The secret has been saved in to the DB and the given code was
 			// validated. Save it to the DB
-			if ( $user->getOption( self::OPT_SECRET_SETUP, false ) === false ) {
+			if ( $userOptionsManager->getOption( $user, self::OPT_SECRET_SETUP, false ) === false ) {
 
 				// Set option & save settings
 				$userOptionsManager->setOption( $user, self::OPT_SECRET_SETUP, "1" );

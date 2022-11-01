@@ -7,6 +7,9 @@
 	"googleauthenticator-desc": "يسمح للمستخدمين بتسجيل الدخول باستخدام التوثيق ذي العاملين الخاص بجوجل",
 	"google2fa-info": "أنت مطلوب منك استخدام التوثيق ذي العاملين في هذه الويكي.",
 	"google2fa-token-label": "الرمز",
+	"google2fa-secret-img": "امسح QR أدناه <span class=\"g2faqr\">$1</span> أو استخدم المفتاح الذي تم إنشاؤه: <strong>$2</strong> لحفظ هذا التطبيق في تطبيق GoogleAuthenticator",
+	"google2fa-rescue-codes": "احفظ الرموز الثلاثة (اكتبها!) أدناه لاستخدامها كمفاتيح إنقاذ:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
 	"google2fa-login-failure": "كود غير صحيح معطى. حاول مرة ثانية.",
-	"google2fa-login-retry-limit": "كل الأكواد المعطاة غير صحيحة. حاول مرة ثانية لاحقا."
+	"google2fa-login-retry-limit": "كل الأكواد المعطاة غير صحيحة. حاول مرة ثانية لاحقا.",
+	"google2fa-resetted": "لقد أدخلت رمز الإنقاذ. قم بتسجيل الدخول مرة أخرى لإنشاء رموز مصادقة وإنقاذ جديدة."
 }

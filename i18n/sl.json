@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"googleauthenticator-desc": "Omogočite uporabnikom, da se prijavijo z Googlovo dvofaktorsko avtentifikacijo",
+	"google2fa-info": "V tem vikiju morate uporabiti dvofaktorsko avtentikacijo.",
+	"google2fa-token-label": "Žeton",
+	"google2fa-secret-img": "Skenirajte spodnjo kodo QR <span class=\"g2faqr\">$1</span> ali uporabite ustvarjeni ključ: <strong>$2</strong>, da shranite to aplikacijo v svojo aplikacijo GoogleAuthenticator",
+	"google2fa-rescue-codes": "Shranite spodnje tri kode (zapišite jih!), da jih boste lahko uporabili kot reševalne ključe:<ul><li> $1</li><li> $2</li><li> $3</li></ul>",
+	"google2fa-login-failure": "Predložena je bila neveljavna koda. Poskusite znova.",
+	"google2fa-login-retry-limit": "Vse predložene kode so bile neveljavne. Poskusite znova pozneje.",
+	"google2fa-resetted": "Vnesli ste reševalno kodo. Znova se prijavite, da ustvarit nove kode za avtentikacijo in reševanje."
+}

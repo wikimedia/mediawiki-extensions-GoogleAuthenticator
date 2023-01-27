@@ -40,7 +40,10 @@
 		"secondaryauth": {
 			"MediaWiki\\Extension\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider": {
 				"class": "MediaWiki\\Extension\\GoogleAuthenticator\\Google2FactorSecondaryAuthenticationProvider",
-				"sort": 50
+				"sort": 50,
+				"services": [
+					"UserOptionsManager"
+				]
 			}
 		}
 	},

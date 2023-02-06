@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"googleauthenticator-desc": "מתן אפשרות למשתמשים להתחבר באמצעות אימות דו־שלבי של גוגל",
+	"google2fa-info": "חובה להשתמש באימות דו־שלבי בוויקי הזה.",
+	"google2fa-token-label": "אסימון",
+	"google2fa-secret-img": "יש לסרוק את ה־QR להלן <span class=\"g2faqr\">$1</span> או להשתמש במפתח שנוצר: <strong>$2</strong> כדי לשמור את היישום הזה ביישום GoogleAuthenticator שלך",
+	"google2fa-rescue-codes": "יש לשמור את שלושת הקודים למטה (ולרשום אותם!) כדי להשתמש בהם כמפתחות הצלה:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "ניתן קוד בלתי־תקין. יש לנסות שוב.",
+	"google2fa-login-retry-limit": "כל הקודים שניתנו היו בלתי־תקינים. יש לנסות שוב מאוחר יותר.",
+	"google2fa-resetted": "הזנת קוד הצלה. יש להיכנס שוב כדי ליצור קודי אימות והצלה חדשים."
+}

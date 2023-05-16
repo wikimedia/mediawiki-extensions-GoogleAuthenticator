@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"googleauthenticator-desc": "Leisti naudotojams prisijungti naudojant Google dviejų veiksnių autentifikavimą",
+	"google2fa-info": "Šioje viki turite naudoti 2 veiksnių autentifikavimą.",
+	"google2fa-token-label": "Prieigos raktas",
+	"google2fa-secret-img": "Nuskaitykite QR kodą žemiau <span class=\"g2faqr\">$1</span> arba naudokite sugeneruotą raktą: <strong>$2</strong>, kad išsaugotumėte šią programą savo GoogleAuthenticator programėlėje",
+	"google2fa-rescue-codes": "Išsaugokite toliau pateiktus tris kodus (juos užsirašykite!), kad galėtumėte juos naudoti kaip gelbėjimo raktus:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Pateiktas neteisingas kodas. Bandykite dar kartą.",
+	"google2fa-login-retry-limit": "Visi pateikti kodai neteisingi. Pabandykite dar kartą vėliau.",
+	"google2fa-resetted": "Įvedėte gelbėjimo kodą. Prisijunkite dar kartą, kad sukurtumėte naujus autentifikavimo ir gelbėjimo kodus."
+}

@@ -6,12 +6,12 @@
 			"Youri van den Bogert"
 		]
 	},
-	"googleauthenticator-desc": "Laat gebruikers toe om zich aan te melden met Google's twee-factor-authenticatie",
-	"google2fa-info": "Tweetrapsauthenticatie is nodig om deze wiki te gebruiken.",
+	"googleauthenticator-desc": "Hiermee kunnen gebruikers zich aanmelden met Google’s tweetrapsauthenticatie",
+	"google2fa-info": "Het gebruik van tweetrapsauthenticatie is verplicht op deze wiki.",
 	"google2fa-token-label": "Token",
-	"google2fa-secret-img": "Scan de onderstaande code in: <span class=\"g2faqr\">$1</span> of gebruik de sleutel: <strong>$2</strong> om je geheime sleutel op te slaan in je app.",
+	"google2fa-secret-img": "Scan de onderstaande QR-code in: <span class=\"g2faqr\">$1</span> of gebruik de gegenereerde sleutel: <strong>$2</strong> om deze applicatie op te slaan in uw GoogleAuthenticator-app",
 	"google2fa-rescue-codes": "Bewaar de drie codes hieronder (schrijf ze op!) om ze als reddingssleutels te gebruiken: <br><ul><li>$1</li><li>$2</li><li>$3</li></ul>",
-	"google2fa-login-failure": "Er is geen geldige code opgegeven. Probeer het nog eens",
+	"google2fa-login-failure": "Ongeldige code opgegeven. Probeer het opnieuw.",
 	"google2fa-login-retry-limit": "Alle opgegeven codes waren ongeldig. Probeer het later nog eens.",
-	"google2fa-resetted": "Je hebt een 'rescue' code opgegeven. Log opnieuw in."
+	"google2fa-resetted": "U hebt een reddingscode ingevoerd. Meld u opnieuw aan om nieuwe authenticatie- en reddingscodes aan te maken."
 }

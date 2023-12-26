@@ -12,6 +12,6 @@
 	"google2fa-secret-img": "Scan de onderstaande code in: <span class=\"g2faqr\">$1</span> of gebruik de sleutel: <strong>$2</strong> om je geheime sleutel op te slaan in je app.",
 	"google2fa-rescue-codes": "Bewaar de drie codes hieronder (schrijf ze op!) om ze als reddingssleutels te gebruiken: <br><ul><li>$1</li><li>$2</li><li>$3</li></ul>",
 	"google2fa-login-failure": "Er is geen geldige code opgegeven. Probeer het nog eens",
-	"google2fa-login-retry-limit": "Je bent automatisch uitgelogd omdat er teveel foute pogingen gedaan zijn.",
+	"google2fa-login-retry-limit": "Alle opgegeven codes waren ongeldig. Probeer het later nog eens.",
 	"google2fa-resetted": "Je hebt een 'rescue' code opgegeven. Log opnieuw in."
 }

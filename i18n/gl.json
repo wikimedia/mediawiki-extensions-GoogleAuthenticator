@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"googleauthenticator-desc": "Permite aos usuarios iniciar sesión coa autenticación de dous factores de Google",
+	"google2fa-info": "Debes usar a autenticación de dous factores neste wiki.",
+	"google2fa-token-label": "Pase",
+	"google2fa-secret-img": "Escanea o QR inferior <span class=\"g2faqr\">$1</span> ou usa a clave xerada <strong>$2</strong> para gardar esta aplicación na túa aplicación GoogleAuthenticator",
+	"google2fa-rescue-codes": "Garda os tres códigos (escríbeos!) inferiores para usalos como claves de recuperación:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "O código indicado non é válido. Inténtao de novo.",
+	"google2fa-login-retry-limit": "Todos os códigos indicados non eran válidos. Inténtao de novo máis tarde.",
+	"google2fa-resetted": "Introduciches un código de recuperación. Inicia sesión de novo para creares novos códigos de autenticación e recuperación."
+}

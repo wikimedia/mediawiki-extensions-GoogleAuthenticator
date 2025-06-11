@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
-	"google2fa-token-label": "Token"
+	"googleauthenticator-desc": "Erlaabt et de Benotzer fir sech mat der Zwee-Faktor-Authentifizéierung vu Google anzeloggen",
+	"google2fa-info": "Dir musst op dëser Wiki d'Zwee-Faktor-Authentifizéierung benotzen.",
+	"google2fa-token-label": "Token",
+	"google2fa-login-failure": "Ongültege Code uginn. Probéiert nach eng Kéier.",
+	"google2fa-login-retry-limit": "All d'Coden, déi ugi goufen, sinn ongülteg. Probéiert méi spéit nach eng Kéier."
 }

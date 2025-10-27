@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim"
+		]
+	},
+	"googleauthenticator-desc": "允許用戶用Google嘅雙重驗證嚟登入",
+	"google2fa-info": "你需要喺維基度用雙重驗證",
+	"google2fa-token-label": "Token",
+	"google2fa-login-failure": "代碼無效。再試多次。",
+	"google2fa-login-retry-limit": "所有嘅代碼無效。遲啲再試。",
+	"google2fa-resetted": "你輸入咗個新嘅代碼。再簽到過就可以建立新嘅驗證同埋代碼。"
+}

@@ -2,12 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"googleauthenticator-desc": "Låt användare logga in med Googles tvåstegsverifiering",
 	"google2fa-info": "Du måste använda tvåfaktorsinloggning på den här wikin.",
 	"google2fa-token-label": "Nyckel",
+	"google2fa-secret-img": "Skanna QR-koden nedan <span class=\"g2faqr\">$1</span> eller använd den genererade nyckeln: <strong>$2</strong> för att spara den här applikationen i din GoogleAuthenticator-app",
+	"google2fa-rescue-codes": "Spara de tre koderna (skriv ner dem!) nedan för att använda dem som räddningsnycklar:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
 	"google2fa-login-failure": "Ogiltig kod angiven. Försök igen.",
-	"google2fa-login-retry-limit": "Alla angivna koder har ogiltiga. Försök igen senare."
+	"google2fa-login-retry-limit": "Alla angivna koder har ogiltiga. Försök igen senare.",
+	"google2fa-resetted": "Du har angett en räddningskod. Logga in igen för att skapa nya autentiserings- och räddningskoder."
 }

@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
-	"google2fa-token-label": "토큰"
+	"google2fa-token-label": "토큰",
+	"google2fa-login-failure": "코드가 잘못되었습니다. 다시 시도해 주세요.",
+	"google2fa-login-retry-limit": "코드가 모두 잘못되었습니다. 다시 시도해 주세요."
 }

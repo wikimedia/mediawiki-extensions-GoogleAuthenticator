@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"googleauthenticator-desc": "Umožňuje používateľom prihlásiť sa dvojfaktorovým overením Google",
+	"google2fa-info": "Na tejto wiki sa vyžaduje používanie dvojfaktorového overenia.",
+	"google2fa-token-label": "Token",
+	"google2fa-secret-img": "Naskenujte QR kód nižšie <span class=\"g2faqr\">$1</span> alebo použite vygenerovaný kľúč: <strong>$2</strong> a uložte túto aplikáciu do svojej aplikácie GoogleAuthenticator",
+	"google2fa-rescue-codes": "Uložte si (zapíšte!) tri kódy nižšie, aby ste ich mohli použiť ako záchranné kľúče:<ul><li>$1</li><li>$2</li><li>$3</li></ul>",
+	"google2fa-login-failure": "Bol zadaný neplatný kód. Skúste to znova.",
+	"google2fa-login-retry-limit": "Všetky zadané kódy boli neplatné. Skúste to neskôr.",
+	"google2fa-resetted": "Zadali ste záchranný kód. Prihláste sa znova, aby sa vytvorili nové overovacie a záchranné kódy."
+}
